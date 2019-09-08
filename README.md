@@ -81,27 +81,8 @@ ROS transform tree:
 
 ![Transform Tree for Multi-Robot Cleaning in Gazebo](documentation_resources/gazebo_multi_robot_cleaning_transforms.png)
 </details>
-<details><summary>Multi-Robot Cleaning Use Case in <b>MORSE</b> </summary>  
-
-ROS computation graph:  
-
-![ROS Computation Graph for Multi-Robot Cleaning in MORSE](documentation_resources/rosgraph_cleaning_morse.png)  
-
-ROS transform tree:  
-
-![Transform Tree for Multi-Robot Cleaning in Gazebo](documentation_resources/morse_frames_cleaning.png)  
 
 As already pointed out, this use case relies on the Kinetic version of the ROS navigation stack, as some issues arise when using a realistic laser frequency (5 Hz) for the Turtlebot in combination with the Melodic version of the navigation stack. With the Kinetic version this issue could not be observed. For more details check out this [question on ROS answers](https://answers.ros.org/question/308814/costmap2d-observation-layers-laser-scan-callback-is-never-called-with-a-low-publication-rate/) and this [issue on Github](https://github.com/ROBOTIS-GIT/turtlebot3/issues/349).
-</details>
-<details><summary>Multi-Robot Exploration Use Case </summary>  
-
-ROS computation graph:  
-
-![ROS Computation Graph for Multi-Robot Exploration](documentation_resources/rosgraph_exploration_morse.png)  
-
-ROS transform tree:  
-
-![Transform Tree for Multi-Robot Exploration](documentation_resources/transform_tree_exploration.png)
 </details>
   
 Parameters can be changed in the YAML files and/or directly in the launch files. Furthermore, simulation environment, robots, etc. can be easily changed as well in the corresponding simulation files.
