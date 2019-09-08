@@ -126,10 +126,3 @@ There are various sources for problems or issues that can cause a ROS-based syst
 # Testing and benchmark
 
 `rosbag_data` is added for testing and benchmark purposes
-
----
-
-Use cases adopted from:  
-[1] Yan, Z., Fabresse, L., Laval, J., & Bouraqadi, N. (2014, October). Team size optimization for multi-robot exploration. In International Conference on Simulation, Modeling, and Programming for Autonomous Robots (pp. 438-449). Springer, Cham.  
-[2] Yan, Z., Fabresse, L., Laval, J., & Bouraqadi, N. (2017). Building a ROS-Based Testbed for Realistic Multi-Robot Simulation: Taking the Exploration as an Example. robotics, 6(3), 21  
-[3] Matena, V., Bures, T., Gerostathopoulos, I., & Hnetynka, P. (2016, May). Model problem and testbed for experiments with adaptation in smart cyber-physical systems. In Software Engineering for Adaptive and Self-Managing Systems (SEAMS), 2016 IEEE/ACM 11th International Symposium on (pp. 82-88). IEEE.
