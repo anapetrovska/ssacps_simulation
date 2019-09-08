@@ -17,14 +17,6 @@ Now ROS and the simulators should be ready. Before continuing make sure that the
 # Setting up the Use Cases
 
 The use cases depend on several ROS packages.  
-For the Multi-Robot-Exploration:  
-- morse\_internals_publisher (optional)  
-- explore\_multirobot  
-- robot\_pose\_publisher  
-- map\_merging  
-- exploration\_monitor  
-- gmapping  
-- ROS navigation stack (Melodic Version)  
 
 For the Multi-Robot-Cleaning Use Case:  
 - goal\_provider  
@@ -58,7 +50,6 @@ Now we can finally proceed to launch the simulations.
 We can differ between two steps for all of the presented use cases:  
 
 1. Launching the simulation  
-   For MORSE-based simulations: `morse run simulation_file.py` (with a running ROS Master)  
    Gazebo-based simulations can be started from a launch file: `roslaunch gazebo_simulation.launch`  
 2. Launching  the robots' ROS nodes  
    Start everything from the corresponding launch file: `roslaunch launch_file.launch`
