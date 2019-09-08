@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd /home/hiwi02/catkin_ws/src/t2-mrs_simulation/cleaning_gazebo/
+
+gnome-terminal --tab -- bash -c "source ~/catkin_ws/devel/setup.bash; export TURTLEBOT3_MODEL=burger; roslaunch simulation_multi_robot.launch; exec bash"
+
+sleep 2s
+
+gnome-terminal --tab -- bash -c "source ~/catkin_ws/devel/setup.bash; export TURTLEBOT3_MODEL=burger; roslaunch multi_robot.launch; exec bash"
+
+sleep 2s
+
+#gnome-terminal --tab -- bash -c "rviz -d multi_robot.rviz; exec bash"
