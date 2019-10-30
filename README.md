@@ -54,15 +54,12 @@ We can differ between two steps:
 2. Launching  the robots' ROS nodes  
    Start everything from the corresponding launch file: `roslaunch multi-robot.launch`
 
-In this repository, go to the directory of the system that you want to launch.
-
 Starting the simulation with the following three steps:  
 1. Specify the Turtlebot 3 model once in both terminals: `export TURTLEBOT3_MODEL=burger`  
 2. `roslaunch simulation_multi_robot.launch`  
 3. `roslaunch multi_robot_launch.launch`  
 
 For more detailed description of how to start the simulation, please refer to the following [link](cleaning_gazebo). 
-
 
 __IMPORTANT__: You need to source the ROS and catkin setup files (in each terminal window). If you followed the standard ROS configuration, you already added the command (`source /opt/ros/melodic/setup.bash`) to your .bashrc and only have to `source ~/catkin_ws/devel/setup.bash`. 
 
@@ -78,6 +75,45 @@ As there are two robots, topics and nodes have to be associated to the namespace
 ![ROS Computation Graph](documentation_resources/material_rosgraph.png)  
 
 </details>
+
+<details><summary>Global task allocation:</summary>  
+ 
+![Global task allocation](documentation_resources/global_task_allocation_gif.gif)  
+
+</details>
+
+<details><summary>Global exploration mode:</summary>  
+ 
+![Global exploration mode](documentation_resources/global_exploration_mode_gif.gif)  
+
+</details>
+
+<details><summary>Local path planning:</summary>  
+ 
+![Local path planning](documentation_resources/local_path_planning_gif.gif)  
+
+</details>
+
+
+<details><summary>Learning the probability distribution:</summary>  
+ 
+![Learning the probability distribution](documentation_resources/learning_the_probability_distribution_gif.gif)  
+
+</details>
+
+<details><summary>Current vision histogram, alpha = 0.75, T = 1000:</summary>  
+ 
+![Current vision histogram1](documentation_resources/current_vision_histogram_gif.gif)  
+
+</details>
+
+<details><summary>Current vision histogram, alpha = 0, T = 0:</summary>  
+ 
+![Current vision histogram2](documentation_resources/current_vision_histogram_2_gif.gif)  
+
+</details>
+
+
 
 As already pointed out, this use case relies on the Kinetic version of the ROS navigation stack, as some issues arise when using a realistic laser frequency (5 Hz) for the Turtlebot in combination with the Melodic version of the navigation stack. With the Kinetic version this issue could not be observed. For more details check out this [question on ROS answers](https://answers.ros.org/question/308814/costmap2d-observation-layers-laser-scan-callback-is-never-called-with-a-low-publication-rate/) and this [issue on Github](https://github.com/ROBOTIS-GIT/turtlebot3/issues/349).
 </details>
