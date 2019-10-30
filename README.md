@@ -54,9 +54,9 @@ We can differ between two steps:
 2. Launching  the robots' ROS nodes  
    Start everything from the corresponding launch file: `roslaunch launch_file.launch`
 
-In this repository, go to the directory of the use case you want to launch.
+In this repository, go to the directory of the system that you want to launch.
 
-Multi-Robot-Cleaning in __Gazebo__:  
+Multi-Robot System in __Gazebo__:  
 1. Specify the Turtlebot 3 model once in both terminals: `export TURTLEBOT3_MODEL=burger`  
 2. `roslaunch simulation_multi_robot.launch`  
 3. `roslaunch multi_robot_launch.launch`  
@@ -68,18 +68,15 @@ __IMPORTANT__: You need to source the ROS and catkin setup files (in each termin
 # System architecture
 The following figure wraps up the high-level architecture for the system:
 
-![Overall Architecture](documentation_resources/overall_architecture.png)  
+![Overall Architecture](documentation_resources/high_level_architecture.png)  
 
 As there are two robots, topics and nodes have to be associated to the namespace of the corresponding robot. Same applies to the transforms. The ROS nodes running for both robots are identical, since they perform the same tasks. The subsequent transform tree and ROS computation graph for the respective use cases depict the detailed structure of the implementations. 
 <details><summary>Multi-Robot Cleaning Use Case in <b>Gazebo</b> </summary>  
 
 ROS computation graph:  
 
-![ROS Computation Graph for Multi-Robot Cleaning in Gazebo](documentation_resources/rosgraph_gazebo_cleaning.png)  
+![ROS Computation Graph for Multi-Robot Cleaning in Gazebo](documentation_resources/material_rosgraph.png)  
 
-ROS transform tree:  
-
-![Transform Tree for Multi-Robot Cleaning in Gazebo](documentation_resources/gazebo_multi_robot_cleaning_transforms.png)
 </details>
 
 As already pointed out, this use case relies on the Kinetic version of the ROS navigation stack, as some issues arise when using a realistic laser frequency (5 Hz) for the Turtlebot in combination with the Melodic version of the navigation stack. With the Kinetic version this issue could not be observed. For more details check out this [question on ROS answers](https://answers.ros.org/question/308814/costmap2d-observation-layers-laser-scan-callback-is-never-called-with-a-low-publication-rate/) and this [issue on Github](https://github.com/ROBOTIS-GIT/turtlebot3/issues/349).
