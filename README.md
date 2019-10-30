@@ -50,16 +50,18 @@ Now we can finally proceed to launch the simulations.
 We can differ between two steps:  
 
 1. Launching the simulation  
-   Gazebo-based simulations can be started from a launch file: `roslaunch gazebo_simulation.launch`  
+   Gazebo-based simulations can be started from a launch file: `roslaunch simulation_multi_robot.launch`  
 2. Launching  the robots' ROS nodes  
-   Start everything from the corresponding launch file: `roslaunch launch_file.launch`
+   Start everything from the corresponding launch file: `roslaunch multi-robot.launch`
 
 In this repository, go to the directory of the system that you want to launch.
 
-Multi-Robot System in __Gazebo__:  
+Starting the simulation with the following three steps:  
 1. Specify the Turtlebot 3 model once in both terminals: `export TURTLEBOT3_MODEL=burger`  
 2. `roslaunch simulation_multi_robot.launch`  
 3. `roslaunch multi_robot_launch.launch`  
+
+For more detailed description of how to start the simulation, please refer to the following [link](cleaning_gazebo). 
 
 
 __IMPORTANT__: You need to source the ROS and catkin setup files (in each terminal window). If you followed the standard ROS configuration, you already added the command (`source /opt/ros/melodic/setup.bash`) to your .bashrc and only have to `source ~/catkin_ws/devel/setup.bash`. 
