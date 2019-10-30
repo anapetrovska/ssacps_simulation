@@ -1,7 +1,8 @@
-# ROS-Based Simulated Multi-Robot Systems
+# Smart Self-Adaptive Cyber-Physical Systems
+## ROS-Based Simulated Multi-Robot Systems
 This repository contains resources for the simulation of ROS-Based Multi-Robot Systems. The implementations are based on ROS and Gazebo for simulation. Aside from simply running the use case of the multi-robot cleaning reference problem, they can be modified to any extent for individual purposes.
 
-The use case was run on Ubuntu 18.04 with ROS Melodic, Gazebo(9.0.0) respectively. For simulation in Gazebo two Turtlebot3 Burger are used. Environment and robots can be replaced by other models - some ROS nodes' parameters may have to be adapted accordingly. Switching to another ROS version like Kinetic should work, but was not tested.
+The use case was run on Ubuntu 18.04 with ROS Melodic, Gazebo(9.0.0) respectively. For simulation two Turtlebot3 Burger are used. Environment and robots can be replaced by other models - some ROS nodes' parameters may have to be adapted accordingly. Switching to another ROS version like Kinetic should work, but was not tested.
 
 If you are familiar with ROS and Gazebo, you may want to skip to the [installation instructions for the required ROS packages](#installing-the-required-packages) or to [the section on how to run the use cases](#running-the-use-cases).
 
@@ -14,19 +15,18 @@ Before setting up and running the use cases make sure that:
 
 Now ROS and the simulators should be ready. Before continuing make sure that these components are properly installed (Can you start ROS and the simulator? Does the simulator publish ROS messages for a ROS-based simulation? Are there any warnings or errors?).
 
-# Setting up the Use Cases
+# Setting up the system
 
-The use cases depend on several ROS packages.  
+The simulated system depend on several ROS packages:  
 
-For the Multi-Robot-Cleaning Use Case:  
 - goal\_provider  
 - map\_server  
 - turtlebot3  
 - ROS navigation stack (Kinetic release)  
-- exploration\_monitor and morse\_internals\_publisher (optional)  
 
-The optional packages are not necessarily needed for the functionality of the use cases but still installed. The two use cases rely on different packages. An important difference is that the multi-robot exploration use case needs the Melodic version of the navigation stack (to be precise of the costmap2D package), whereas the the multi-robot cleaning use case runs with the Kinetic version of the navigation stack - as we could observe an unexpected behavior when running it with the Melodic version. For this reason we recommend to only install the packages for the use case of interest, otherwise close attention has to be paid to sourcing the correct environment.
-We need to create a catkin workspace and build several of the packages from source. Some of the packages are part of meta-packages. The following section guides through the process of creating the workspace for the packages and installing them.
+The complete list of packages can be found on the following link: https://github.com/tum-i22/ssacps_packages.
+
+Some of the packages are part of meta-packages. The following section guides through the process of creating the workspace for the packages and installing them.
 
 ## Installing the required packages
 
@@ -37,7 +37,7 @@ We need to create a catkin workspace and build several of the packages from sour
 5. Get the necessary packages. Switch to the corresponding directory `cd ~/catkin_ws/src` and get the source code for the packages:
      - Get the Kinetic release of the navigation stack; you can either clone the repository and checkout the Kinetic release with `git clone https://github.com/ros-planning/navigation.git && git checkout kinetic-devel && git checkout tags/1.14.4 -b most-recent-kinetic-release` or you just [download the zipped files](https://github.com/ros-planning/navigation/archive/1.14.4.zip) and unpack them. In both cases we have to make a little change to `amcl/src/amcl_node.cpp` to build for Melodic, the adaption is explained [here](https://github.com/moriarty/navigation/commit/ae060c92a423783c45ef35005ec443e5736c6689).
      - Get the Turtlebot resources: `git clone https://github.com/ROBOTIS-GIT/turtlebot3.git`
-     - Clone the the mrs_packages repository
+     - Clone the the ssacps_packages repository
 6. Now we have all the required packages; go back to the root of your catkin workspace: `cd ~/catkin_ws`
 7. Get all packages' dependencies: `rosdep install --from-paths src --ignore-src --rosdistro melodic -r -y`
 8. Build all our packages: `catkin_make -DCMAKE_BUILD_TYPE=Release`. This might take a few minutes the first time and depending on the system.
@@ -46,8 +46,8 @@ We need to create a catkin workspace and build several of the packages from sour
 Now we can finally proceed to launch the simulations.
 
 
-# Running the Use Cases
-We can differ between two steps for all of the presented use cases:  
+# Running the simulated system
+We can differ between two steps:  
 
 1. Launching the simulation  
    Gazebo-based simulations can be started from a launch file: `roslaunch gazebo_simulation.launch`  
@@ -65,8 +65,8 @@ Multi-Robot-Cleaning in __Gazebo__:
 __IMPORTANT__: You need to source the ROS and catkin setup files (in each terminal window). If you followed the standard ROS configuration, you already added the command (`source /opt/ros/melodic/setup.bash`) to your .bashrc and only have to `source ~/catkin_ws/devel/setup.bash`. 
 
 
-# Use Case Details
-Depending on the use case the overall architecture is slightly different. The following figure wraps up the high-level architecture for the use cases:
+# System architecture
+The following figure wraps up the high-level architecture for the system:
 
 ![Overall Architecture](documentation_resources/overall_architecture.png)  
 
