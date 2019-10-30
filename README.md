@@ -66,16 +66,14 @@ __IMPORTANT__: You need to source the ROS and catkin setup files (in each termin
 
 
 # System architecture
-The following figure wraps up the high-level architecture for the system:
+The following figure wraps up the high-level architecture for the system (including the ROS nodes and topics):
 
-![Overall Architecture](documentation_resources/high_level_architecture.png)  
+![Overall Architecture](documentation_resources/high_level_architecture.PNG)  
 
 As there are two robots, topics and nodes have to be associated to the namespace of the corresponding robot. Same applies to the transforms. The ROS nodes running for both robots are identical, since they perform the same tasks. The subsequent transform tree and ROS computation graph for the respective use cases depict the detailed structure of the implementations. 
-<details><summary>Multi-Robot Cleaning Use Case in <b>Gazebo</b> </summary>  
-
-ROS computation graph:  
-
-![ROS Computation Graph for Multi-Robot Cleaning in Gazebo](documentation_resources/material_rosgraph.png)  
+<details><summary>ROS computation graph:</summary>  
+ 
+![ROS Computation Graph](documentation_resources/material_rosgraph.png)  
 
 </details>
 
