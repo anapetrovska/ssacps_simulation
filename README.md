@@ -4,7 +4,7 @@ This repository contains resources for the simulation of ROS-Based Multi-Robot S
 
 The use case was run on Ubuntu 18.04 with ROS Melodic, Gazebo(9.0.0) respectively. For simulation two Turtlebot3 Burger are used. Environment and robots can be replaced by other models - some ROS nodes' parameters may have to be adapted accordingly. Switching to another ROS version like Kinetic should work, but was not tested.
 
-If you are familiar with ROS and Gazebo, you may want to skip to the [installation instructions for the required ROS packages](#installing-the-required-packages) or to [the section on how to run the use cases](#running-the-use-cases).
+If you are familiar with ROS and Gazebo, you may want to skip to the [installation instructions for the required ROS packages](#installing-the-required-packages) or to [the section on how to run the simulated system](#running-the-simulated-system).
 
 # Prerequisites
 Before setting up and running the use cases make sure that:  
